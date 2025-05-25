@@ -1,7 +1,7 @@
 const ItemListContainer = ({ greeting }) => {
   return (
-    <div className="container mt-4 text-center">
-      <h2>{greeting}</h2>
+    <div className="d-flex justify-content-center align-items-center vh-100">
+      <h2 className="text-center">{greeting}</h2>
     </div>
   );
 };

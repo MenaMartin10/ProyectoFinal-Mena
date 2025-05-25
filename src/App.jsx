@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="d-flex flex-column align-items-center">
       <NavBar />
-      <ItemListContainer greeting="¡Bienvenido a Mena Store, nuestra tienda online!" />
+      <ItemListContainer greeting="¡Bienvenido a MenaStore, nuestra tienda online!" />
     </div>
   );
 }
