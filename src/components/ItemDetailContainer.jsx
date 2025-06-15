@@ -32,8 +32,7 @@ const ItemDetailContainer = () => {
               {item.description || "Producto de excelente calidad."}
             </p>
             <p className="card-text fw-bold">${item.price}</p>
-
-            {/* ✅ Componente de cantidad */}
+            
             <ItemCount stock={10} initial={1} onAdd={handleAdd} />
           </div>
         </div>
