@@ -7,7 +7,7 @@ import zapatillasImg from '../assets/img/ZapatillasOfertas.png';
 export const productos = [
   {
     id: '1',
-    title: 'Remera Oversize Hombre',
+    title: 'Remera Oversize',
     category: 'hombre',
     price: 8500,
     image: remeraImg,

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { productos } from "../data/products";
-import ItemCount from "./ItemCount"; // Asegurate de tener este componente creado
+import ItemCount from "./ItemCount"; 
 
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
