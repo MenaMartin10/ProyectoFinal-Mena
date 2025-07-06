@@ -22,7 +22,7 @@ const ItemListContainer = ({ greeting }) => {
         let filtrados = data;
 
         if (categoryId) {
-          filtrados = filtrados.filter(p => p.category === categoryId);
+          filtrados = filtrados.filter(p => p.category.includes(categoryId));
         }
 
         if (search) {
