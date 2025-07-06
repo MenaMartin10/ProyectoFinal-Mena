@@ -1,44 +1,28 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { productos } from "../data/products";
-import ItemCount from "./ItemCount"; 
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { getProductoById } from '../services/firebase';
+import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
-  const { itemId } = useParams();
-  const [item, setItem] = useState(null);
+  const { id } = useParams(); 
+  const [producto, setProducto] = useState(null);
 
   useEffect(() => {
-    const fetchItem = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productos.find((p) => p.id === itemId));
-      }, 1000);
-    });
+    console.log("🔍 Buscando producto con ID:", id);
+    
+    getProductoById(id)
+      .then(res => {
+        console.log("✅ Producto encontrado:", res);
+        setProducto(res);
+      })
+      .catch(err => console.error("❌ Error al obtener el producto:", err));
+  }, [id]);
 
-    fetchItem.then((res) => setItem(res));
-  }, [itemId]);
-
-  const handleAdd = (cantidad) => {
-    console.log(`Agregaste ${cantidad} unidades al carrito`);
-  };
+  if (!producto) return <p className="mt-5">Cargando producto...</p>;
 
   return (
-    <div className="container mt-4 text-center">
-      {item ? (
-        <div className="card mx-auto" style={{ maxWidth: "400px" }}>
-          <img src={item.image} className="card-img-top" alt={item.title} />
-          <div className="card-body">
-            <h3 className="card-title">{item.title}</h3>
-            <p className="card-text">
-              {item.description || "Producto de excelente calidad."}
-            </p>
-            <p className="card-text fw-bold">${item.price}</p>
-            
-            <ItemCount stock={10} initial={1} onAdd={handleAdd} />
-          </div>
-        </div>
-      ) : (
-        <p>Cargando producto...</p>
-      )}
+    <div className="container mt-5">
+      <ItemDetail producto={producto} />
     </div>
   );
 };
