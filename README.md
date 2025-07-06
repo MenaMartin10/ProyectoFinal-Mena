@@ -1,12 +1,24 @@
-# React + Vite
+Proyecto Final - Mena Store 🛍️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es mi proyecto final del curso de React JS en Coderhouse.
 
-Currently, two official plugins are available:
+🚀 Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React JS
+- React Router
+- Firebase Firestore
+- Context API
+- Bootstrap
+- Vite
+- GitHub
+- Vercel
 
-## Expanding the ESLint configuration
+📦 Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Catálogo dinámico de productos
+- Vista por categorías
+- Detalle de cada producto
+- Carrito de compras con cantidad y subtotal
+- Checkout con formulario y generación de orden en Firestore
+
+
