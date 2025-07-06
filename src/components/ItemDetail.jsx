@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { CartContext } from "./CartContext";
 import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ producto }) => {
   const [agregado, setAgregado] = useState(false);
@@ -18,15 +19,22 @@ const ItemDetail = ({ producto }) => {
   };
 
   return (
-    <div className="text-center">
+    <div className="text-center" style={{ margin: '80px' }}>
       <img src={producto.image} alt={producto.title} style={{ maxWidth: '300px' }} />
       <h2>{producto.title}</h2>
       <p>{producto.description}</p>
       <p>Precio: ${producto.price}</p>
+
       {agregado ? (
-        <p className="mt-3">Producto agregado al carrito ✅</p>
+        <>
+          <p className="mt-3">Producto agregado al carrito ✅</p>
+          <Link to="/" className="btn btn-dark mt-2">Volver al inicio</Link>
+        </>
       ) : (
-        <ItemCount stock={10} onAdd={handleAdd} />
+        <>
+          <ItemCount stock={10} onAdd={handleAdd} />
+          <Link to="/" className="btn btn-dark mt-3">Volver al inicio</Link>
+        </>
       )}
     </div>
   );
